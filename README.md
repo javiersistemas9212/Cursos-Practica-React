@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# 🎓 Plataforma de Cursos - Proyecto de Práctica React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Bienvenido al repositorio de mi **Plataforma de Cursos**! Este es un proyecto de aprendizaje y práctica personal diseñado para profundizar en el ecosistema de **React**, dominando la gestión de estado, los efectos secundarios, el flujo global de datos y la optimización de lógica mediante Hooks (tanto nativos como personalizados).
 
-## Available Scripts
+La aplicación simula un entorno educativo digital donde los usuarios pueden iniciar sesión, navegar por módulos de aprendizaje y resolver cuestionarios interactivos.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🧠 Glosario de Hooks Utilizados (Aprendizaje)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para resolver las diferentes necesidades de la plataforma, se implementaron los siguientes Hooks de React:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. `useState`
+* **¿Qué hace?:** Permite añadir estado local a los componentes funcionales de React para recordar datos entre renders.
+* **Uso en el proyecto:** Lo utilizamos para controlar el estado de elementos visuales dinámicos, como saber qué opción del quiz seleccionó el alumno en un momento dado (`selectedAnswer`) o para manejar los campos de texto de los formularios de login de manera controlada.
 
-### `npm test`
+### 2. `useEffect`
+* **¿Qué hace?:** Ejecuta código en respuesta a cambios en el ciclo de vida del componente (sincronización con efectos secundarios).
+* **Uso en el proyecto:** Esencial para detectar cuándo cambia el curso en la URL (parámetro `idCourse`) y reiniciar el cuestionario inmediatamente. También se usa para persistir de manera segura la sesión del usuario en el `localStorage`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. `useContext`
+* **¿Qué hace?:** Crea un estado global accesible por cualquier componente de la aplicación, sin importar qué tan profundo esté en el árbol, evitando el "prop drilling".
+* **Uso en el proyecto:** Es el motor del **Sistema de Autenticación**. Protege las rutas privadas de la plataforma y provee la información del usuario logueado (`user`) y las funciones de `login` y `logout` a toda la aplicación.
 
-### `npm run build`
+### 4. `useReducer`
+* **¿Qué hace?:** Una alternativa a `useState` ideal para gestionar estados complejos con múltiples transiciones de lógica interconectadas, centralizándolas en una función pura llamada *reducer*.
+* **Uso en el proyecto:** Controla todo el **Sistema de Quizzes**. Maneja de forma unificada el avance de preguntas, el cálculo en tiempo real del puntaje del estudiante, el bloqueo del botón "Siguiente" y el despliegue automático de la pantalla de resultados cuando el cuestionario se completa.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 5. Custom Hooks (Hooks Personalizados)
+* **¿Qué hacen?:** Permiten extraer lógica repetitiva de los componentes en funciones reutilizables que pueden mantener internamente su propio estado de React.
+* **Uso en el proyecto:** Implementados para encapsular y limpiar el consumo del contexto de autenticación o abstraer peticiones de datos, logrando que los componentes de la interfaz de usuario (JSX) queden mucho más limpios, modulares y fáciles de mantener.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Características Clave Implementadas
 
-### `npm run eject`
+* **Autenticación Global (`useContext`):** Flujo completo para iniciar y cerrar sesión que bloquea o desbloquea el acceso al catálogo formativo.
+* **Quizzes Dinámicos por Curso (`useReducer`):** Filtrado inteligente de cuestionarios específicos (ej. *React Avanzado* o *SQL Server*) que adapta el contenido de la evaluación según el módulo activo.
+* **Rutado Dinámico:** Navegación fluida e intuitiva basada en parámetros de URL para cargar lecciones bajo demanda.
+* **Arquitectura Escalable:** Separación estricta entre la UI (Componentes visuales), la lógica de negocio (Hooks y Reducers) y los estilos CSS.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Cómo Ejecutar el Proyecto Localmente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Clonar este repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/tu-usuario/tu-repositorio.git)
