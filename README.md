@@ -44,5 +44,4 @@ Para resolver las diferentes necesidades de la plataforma, se implementaron los 
 ## 🚀 Cómo Ejecutar el Proyecto Localmente
 
 1. **Clonar este repositorio:**
-   ```bash
    git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/tu-usuario/tu-repositorio.git)
