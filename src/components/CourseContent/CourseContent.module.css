@@ -1,0 +1,157 @@
+:root {
+  --primary-color: #4f46e5;       /* Morado/Indigo moderno */
+  --bg-main: #f8fafc;             /* Fondo gris muy claro */
+  --bg-card: #ffffff;             /* Fondo blanco para los bloques */
+  --text-main: #1e293b;           /* Gris oscuro para texto principal */
+  --text-muted: #64748b;          /* Gris medio para texto secundario */
+  --border-color: #e2e8f0;        /* Gris claro para bordes */
+  --hover-color: #f1f5f9;         /* Color al pasar el cursor */
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-main);
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.syllabusList {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.moduleWrapper {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.moduleWrapper:last-child {
+  border-bottom: none;
+}
+
+/* Cabecera del módulo clickable */
+.moduleHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background-color: var(--bg-main);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.moduleHeader:hover {
+  background-color: var(--hover-color);
+}
+
+.activeHeader {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.moduleInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.arrowDown {
+  transform: rotate(90deg);
+}
+
+.moduleTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.moduleDuration {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Contenedor de lecciones con animación básica */
+.lessonsList {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.show {
+  max-height: 500px; /* Un valor lo suficientemente alto */
+  transition: max-height 0.3s ease-in;
+}
+
+/* Item de lección individual */
+.lessonItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  padding-left: 48px; /* Espacio extra a la izquierda para alinear con el título del módulo */
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.lessonItem:last-child {
+  border-bottom: none;
+}
+
+.lessonItem:hover {
+  background-color: #fafafa;
+}
+
+.lessonMain {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lessonIcon {
+  font-size: 14px;
+}
+
+.lessonTitle {
+  font-size: 14px;
+  color: #334155;
+  cursor: pointer;
+}
+
+.lessonTitle:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.lessonDuration {
+  font-size: 13px;
+  color: var(--text-muted);
+}

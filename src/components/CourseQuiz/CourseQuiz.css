@@ -1,0 +1,140 @@
+/* Variables de color para adaptar fácilmente a tu plataforma */
+:root {
+  --primary-color: #4f46e5;       /* Azul índigo moderno */
+  --primary-hover: #4338ca;
+  --bg-container: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --border-color: #e5e7eb;
+  --bg-selected: #eef2ff;         /* Fondo azul claro para opción seleccionada */
+  --border-selected: #6366f1;     /* Borde azul para opción seleccionada */
+  --success-color: #10b981;      /* Verde para el éxito final */
+}
+
+/* Contenedor principal del Quiz */
+.quiz-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: var(--bg-container);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Contador de preguntas (ej. Pregunta 1 de 5) */
+.quiz-container h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Texto de la pregunta */
+.question-text {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+/* Lista de opciones (botones) */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+/* Estilo base de los botones de opción */
+.option-btn {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efecto hover en las opciones */
+.option-btn:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+/* ESTADO SELECCIONADO: Cuando el índice coincide con 'selectedAnswer' */
+.option-btn.selected {
+  background-color: var(--bg-selected);
+  border-color: var(--border-selected);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Contenedor del botón de acción */
+.quiz-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Botón Siguiente / Finalizar */
+.next-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.next-btn:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+/* Estado deshabilitado si el usuario no ha elegido respuesta */
+.next-btn:disabled {
+  background-color: var(--border-color);
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Pantalla de Quiz Completado */
+.quiz-container.completed {
+  text-align: center;
+}
+
+.quiz-container.completed h2 {
+  color: var(--success-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-container.completed p {
+  color: var(--text-main);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón de reinicio */
+.quiz-container.completed button {
+  background-color: var(--text-main);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.quiz-container.completed button:hover {
+  opacity: 0.9;
+}

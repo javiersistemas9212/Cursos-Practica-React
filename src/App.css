@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Contenedor que alinea los dos bloques de lado a lado */
+.app-layout {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  max-width: 1400px; /* Limita el ancho máximo en pantallas gigantes */
+  margin: 0 auto;    /* Centra todo el bloque en la pantalla */
+  padding: 1.5rem;
+  gap: 2rem;         /* Espacio de separación entre el ranking y el contenido */
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+/* Columna del Ranking (Ocupa una parte pequeña) */
+.rankingMenu {
+  flex: 0 0 20%;     /* El ranking ocupará exactamente el 30% del ancho */
+  min-width: 320px;  /* Evita que se encoja demasiado en pantallas medianas */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Columna del Contenido Principal (Ocupa el resto de la pantalla) */
+.mainContent {
+  flex: 1;           /* Toma automáticamente todo el espacio restante (70%) */
+  background-color: #f9fafb; /* Color de fondo opcional para diferenciarlo */
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* 📱 RESPONSIVO: Si la pantalla es pequeña (Móviles), el ranking se va arriba y el contenido abajo */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column; 
+    gap: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .rankingMenu {
+    width: 100%;
+    min-width: unset;
   }
 }

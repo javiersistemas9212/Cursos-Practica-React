@@ -1,0 +1,153 @@
+
+/* Contenedor General y Temas */
+.leaderboard-wrapper {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.leaderboard-wrapper.dark-theme {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+/* Botón de cambio de tema */
+.theme-toggle-btn {
+  margin-bottom: 1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+.theme-toggle-btn:hover {
+  background-color: #4338ca;
+}
+
+/* Tarjeta del Ranking */
+.leaderboard-card {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dark-theme .leaderboard-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+/* Encabezado */
+.leaderboard-header {
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.leaderboard-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.leaderboard-header p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Lista de posiciones */
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ítems individuales */
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.dark-theme .leaderboard-item {
+  border-bottom: 1px solid #374151;
+}
+
+.leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+/* Alineaciones internas */
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rank-number {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #6b7280;
+  width: 24px;
+}
+
+.student-avatar {
+  font-size: 1.3rem;
+}
+
+.student-name {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.dark-theme .student-name {
+  color: #f3f4f6;
+}
+
+.student-points {
+  color: #4b5563;
+}
+
+.dark-theme .student-points {
+  color: #9ca3af;
+}
+
+/* 🏆 Estilos especiales para el podio (Destacados) */
+.leaderboard-item.gold {
+  background-color: #fffbeb;
+}
+.dark-theme .leaderboard-item.gold {
+  background-color: rgba(251, 191, 36, 0.1);
+}
+.leaderboard-item.gold .rank-number { color: #d97706; }
+
+.leaderboard-item.silver {
+  background-color: #f9fafb;
+}
+.dark-theme .leaderboard-item.silver {
+  background-color: rgba(156, 163, 175, 0.1);
+}
+.leaderboard-item.silver .rank-number { color: #4b5563; }
+
+.leaderboard-item.bronze {
+  background-color: #fff7ed;
+}
+.dark-theme .leaderboard-item.bronze {
+  background-color: rgba(249, 115, 22, 0.1);
+}
+.leaderboard-item.bronze .rank-number { color: #ea580c; }
